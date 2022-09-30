@@ -37,6 +37,8 @@
     <arg if="$(eval arg('robot_name') == '/')" name="frame_prefix" value="" />
     <arg unless="$(eval arg('robot_name') == '/')" name="frame_prefix" value="$(arg robot_name)/" />
 
+    <arg name="publish_odom_tf" default="true"/>
+
     <include file="$(find champ_bringup)/launch/bringup.launch">
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="base_frame" value="$(arg base_frame)"/>
@@ -55,6 +57,7 @@
         <arg name="publish_foot_contacts" value="$(arg publish_foot_contacts)" />
         <arg name="publish_joint_control" value="$(arg publish_joint_control)" />
         <arg name="close_loop_odom" value="$(arg close_loop_odom)" />
+        <arg name="publish_odom_tf" default="$(arg publish_odom_tf)"/>
     </include>
 
     <group if="$(arg hardware_connected)">
