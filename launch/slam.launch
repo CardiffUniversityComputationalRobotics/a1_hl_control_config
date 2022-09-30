@@ -1,8 +1,8 @@
 <launch>
-    <arg name="robot_name" default="/"/>
-    <arg name="rviz"       default="false"/>
-    
-    <arg if="$(eval arg('robot_name') == '/')"  name="frame_prefix" value="" />
+    <arg name="robot_name" default="/a1_gazebo"/>
+    <arg name="rviz" default="false"/>
+
+    <arg if="$(eval arg('robot_name') == '/')" name="frame_prefix" value="" />
     <arg unless="$(eval arg('robot_name') == '/')" name="frame_prefix" value="$(arg robot_name)/" />
 
     <group ns="$(arg robot_name)">
@@ -13,11 +13,9 @@
         <!-- Calls navigation stack packages -->
         <include file="$(find a1_hl_control_config)/launch/include/move_base.launch">
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
-            <arg name="robot_name"   value="$(arg robot_name)"/>
+            <arg name="robot_name" value="$(arg robot_name)"/>
         </include>
 
-        <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz"
-            args="-d $(find champ_navigation)/rviz/navigate.rviz -f $(arg frame_prefix)map"
-            output="screen"/>
+        <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(find champ_navigation)/rviz/navigate.rviz -f $(arg frame_prefix)map" output="screen"/>
     </group>
 </launch>
