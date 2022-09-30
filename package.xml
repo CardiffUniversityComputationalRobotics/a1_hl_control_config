@@ -13,5 +13,8 @@
   <exec_depend>roslaunch</exec_depend>
   <exec_depend>rviz</exec_depend>
   <exec_depend>champ_base</exec_depend>
-  
+  <depend>champ_navigation</depend>
+  <depend>champ_bringup</depend>
+  <depend>champ_config</depend>
+
 </package>
