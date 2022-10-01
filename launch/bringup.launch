@@ -38,6 +38,7 @@
     <arg unless="$(eval arg('robot_name') == '/')" name="frame_prefix" value="$(arg robot_name)/" />
 
     <arg name="publish_odom_tf" default="true"/>
+    <arg name="imu_topic" default="trunk_imu"/>
 
     <include file="$(find champ_bringup)/launch/bringup.launch">
         <arg name="robot_name" value="$(arg robot_name)"/>
@@ -58,6 +59,7 @@
         <arg name="publish_joint_control" value="$(arg publish_joint_control)" />
         <arg name="close_loop_odom" value="$(arg close_loop_odom)" />
         <arg name="publish_odom_tf" default="$(arg publish_odom_tf)"/>
+        <arg name="imu_topic" default="$(arg imu_topic)"/>
     </include>
 
     <group if="$(arg hardware_connected)">

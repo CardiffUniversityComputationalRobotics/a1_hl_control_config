@@ -28,6 +28,7 @@
         <arg name="hardware_connected" value="false"/>
         <arg name="publish_foot_contacts" value="false"/>
         <arg name="close_loop_odom" value="true"/>
+        <arg name="imu_topic" default="trunk_imu"/>
     </include>
 
     <include file="$(find champ_gazebo)/launch/gazebo.launch">
