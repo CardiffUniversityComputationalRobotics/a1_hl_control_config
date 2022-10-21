@@ -38,7 +38,7 @@
     <arg unless="$(eval arg('robot_name') == '/')" name="frame_prefix" value="$(arg robot_name)/" />
 
     <arg name="publish_odom_tf" default="true"/>
-    <arg name="imu_topic" default="trunk_imu"/>
+    <arg name="imu_topic" default="imu/data"/>
 
     <include file="$(find champ_bringup)/launch/bringup.launch">
         <arg name="robot_name" value="$(arg robot_name)"/>
