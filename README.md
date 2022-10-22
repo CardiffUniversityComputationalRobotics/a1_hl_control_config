@@ -1,6 +1,8 @@
 
 ## 1. Quick Start
 
+**:warning: :warning: The high level control (most of this package) is meant to be used with the simulated Unitree A1 Robot. For the real-world robot, the capabilities of this package are barely used. :warning: :warning:**
+
 You don't need a physical robot to run the following demos. 
 
 ### 1.1. Walking demo in RVIZ:
